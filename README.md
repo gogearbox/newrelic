@@ -18,7 +18,7 @@
     </a>
 </p>
 
-**sentry** middleware
+**newrelic** middleware
 
 
 ### Supported Go versions & installation
@@ -48,13 +48,13 @@ func main() {
 	// Setup gearbox
 	gb := gearbox.New()
 
-	// Initialize sentry
+	// Initialize newrelic
 	nr, _ := newrelic.NewApplication(
 		newrelic.ConfigAppName(APP_NAME),
 		newrelic.ConfigLicense(LICENSE),
 	)
 
-	// Register the sentry middleware for all requests
+	// Register the newrelic middleware for all requests
 	gb.Use(newrelicmiddleware.New(nr))
 
 	// Define your handler
